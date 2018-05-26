@@ -232,6 +232,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/Spring-MVC常用注解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="senwen Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gikky">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/26/Spring-MVC常用注解/" itemprop="url">Spring MVC常用注解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T10:45:17+08:00">
+                2018-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Spring-MVC的常用注解"><a href="#Spring-MVC的常用注解" class="headerlink" title="Spring MVC的常用注解"></a>Spring MVC的常用注解</h3><ul>
+<li>@Controller<br><br>@Controller注解在类上，表明这个类是Spring mvc的Controller，将其声明为Spring的一个Bean，Disoatcher Servlet会自动扫描注解了此注解的类，并将Web请求映射到注解@RequestMapping的方法上，<strong><em>这里需要注意的是</em></strong>,在声明普通的Bean的时候，使用@Component、@Server、@Repository和@Controller是等同的。因为@Service、@Repository、@Controller都组合了@Componment元注解。但是在Spring mvc声明控制器Bean的时候，只能使用@Controller。</li>
+<li>@RequestMapping<br><br>@RequestMapping注解是用来映射Web请求(访问路径和参数)、处理类和方法的。@RequestMapping可注解在类或方法上。注解在方法上的@RequestMapping路径会继承注解在类上的路径。<pre><code>@RequestMapping(&quot;/xxx&quot;)
+public class aaa{
+    @RequestMapping(&quot;/yyy&quot;)
+    public void open(){
+        }
+    }
+</code></pre>以上代码中访问方法open的浏览器路径将是/xxx/yyy而不是/yyy，需要继承类上的路径。<br>@RequestMapping支持Servlet的request和response作为参数，也支持对request和response的媒体类型进行配置</li>
+<li>@ResponseBody<br><br>@ResponseBody支持将返回值放在response体内，而非一个页面，我们在写基于Ajax的程序时，可以以此注解返回数据而非页面，此注解可放置在返回值前或者方法上。</li>
+<li>@RequestBody<br><br>@RequestBody允许request的参数在request体内，而不是在直接链接在地址后面，此注解放置在参数前。即：<br><br>1、@RequestBody需要把所有请求参数作为json解析，因此，不能包含key=value这样的写法在请求url中，所有的请求参数都是一个json<br>2、直接通过浏览器输入url时，@RequestBody获取不到json对象，需要用java编程或者基于ajax的方法请求，将Content-Type设置为application/json</li>
+<li>@PathVariable<br><br>@PathVariable用来接收路径参数，如/new/001,可接收001作为参数，此注解放置在参数前。</li>
+<li>@RestController<br><br>@RestController是一个组合注解，组合了@Controller和@RespoonseBody，这意味着当你只开发一个和页面交互数据的控制的时候，需要使用此注解，若没有此注解，要想实现上述功能，则需要自己在代码中加@Controller和@ResponseBody两个注解。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/使用hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -421,7 +554,7 @@ hexo deploy
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
