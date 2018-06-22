@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Spring MVC的常用注解 @Controller@Controller注解在类上，表明这个类是Spring mvc的Controller，将其声明为Spring的一个Bean，Disoatcher Servlet会自动扫描注解了此注解的类，并将Web请求映射到注解@RequestMapping的方法上，这里需要注意的是,在声明普通的Bean的时候，使用@Component、@Server、@">
+<meta name="description" content="mysql mysqldump 只导出表结构 不导出数据 mysqldump –opt -d 数据库名 -u root -p &amp;gt; xxx.sql  备份数据库  #mysqldump　数据库名　&amp;gt;数据库备份名  #mysqldump　-A　-u用户名　-p密码　数据库名&amp;gt;数据库备份名  #mysqldump　-d　-A　–add-drop-table　-uroot　-p　&amp;gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring MVC常用注解">
-<meta property="og:url" content="http://yoursite.com/2018/05/26/Spring-MVC常用注解/index.html">
+<meta property="og:title" content="mysql基本操作指令">
+<meta property="og:url" content="http://yoursite.com/2018/06/22/mysql基本操作指令/index.html">
 <meta property="og:site_name" content="Gikky">
-<meta property="og:description" content="Spring MVC的常用注解 @Controller@Controller注解在类上，表明这个类是Spring mvc的Controller，将其声明为Spring的一个Bean，Disoatcher Servlet会自动扫描注解了此注解的类，并将Web请求映射到注解@RequestMapping的方法上，这里需要注意的是,在声明普通的Bean的时候，使用@Component、@Server、@">
+<meta property="og:description" content="mysql mysqldump 只导出表结构 不导出数据 mysqldump –opt -d 数据库名 -u root -p &amp;gt; xxx.sql  备份数据库  #mysqldump　数据库名　&amp;gt;数据库备份名  #mysqldump　-A　-u用户名　-p密码　数据库名&amp;gt;数据库备份名  #mysqldump　-d　-A　–add-drop-table　-uroot　-p　&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-26T09:30:31.341Z">
+<meta property="og:updated_time" content="2018-06-22T00:41:23.093Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring MVC常用注解">
-<meta name="twitter:description" content="Spring MVC的常用注解 @Controller@Controller注解在类上，表明这个类是Spring mvc的Controller，将其声明为Spring的一个Bean，Disoatcher Servlet会自动扫描注解了此注解的类，并将Web请求映射到注解@RequestMapping的方法上，这里需要注意的是,在声明普通的Bean的时候，使用@Component、@Server、@">
+<meta name="twitter:title" content="mysql基本操作指令">
+<meta name="twitter:description" content="mysql mysqldump 只导出表结构 不导出数据 mysqldump –opt -d 数据库名 -u root -p &amp;gt; xxx.sql  备份数据库  #mysqldump　数据库名　&amp;gt;数据库备份名  #mysqldump　-A　-u用户名　-p密码　数据库名&amp;gt;数据库备份名  #mysqldump　-d　-A　–add-drop-table　-uroot　-p　&amp;gt;">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/26/Spring-MVC常用注解/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/22/mysql基本操作指令/"/>
 
 
 
 
 
-  <title>Spring MVC常用注解 | Gikky</title>
+  <title>mysql基本操作指令 | Gikky</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/Spring-MVC常用注解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/22/mysql基本操作指令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="senwen Zheng">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring MVC常用注解</h1>
+          <h1 class="post-title" itemprop="name headline">mysql基本操作指令</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T10:45:17+08:00">
-                2018-05-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T08:40:52+08:00">
+                2018-06-22
               </time>
             
 
@@ -299,20 +299,24 @@
       
 
       
-        <h3 id="Spring-MVC的常用注解"><a href="#Spring-MVC的常用注解" class="headerlink" title="Spring MVC的常用注解"></a>Spring MVC的常用注解</h3><ul>
-<li>@Controller<br><br>@Controller注解在类上，表明这个类是Spring mvc的Controller，将其声明为Spring的一个Bean，Disoatcher Servlet会自动扫描注解了此注解的类，并将Web请求映射到注解@RequestMapping的方法上，<strong><em>这里需要注意的是</em></strong>,在声明普通的Bean的时候，使用@Component、@Server、@Repository和@Controller是等同的。因为@Service、@Repository、@Controller都组合了@Componment元注解。但是在Spring mvc声明控制器Bean的时候，只能使用@Controller。</li>
-<li>@RequestMapping<br><br>@RequestMapping注解是用来映射Web请求(访问路径和参数)、处理类和方法的。@RequestMapping可注解在类或方法上。注解在方法上的@RequestMapping路径会继承注解在类上的路径。<pre><code>@RequestMapping(&quot;/xxx&quot;)
-public class aaa{
-    @RequestMapping(&quot;/yyy&quot;)
-    public void open(){
-        }
-    }
-</code></pre>以上代码中访问方法open的浏览器路径将是/xxx/yyy而不是/yyy，需要继承类上的路径。<br>@RequestMapping支持Servlet的request和response作为参数，也支持对request和response的媒体类型进行配置</li>
-<li>@ResponseBody<br><br>@ResponseBody支持将返回值放在response体内，而非一个页面，我们在写基于Ajax的程序时，可以以此注解返回数据而非页面，此注解可放置在返回值前或者方法上。</li>
-<li>@RequestBody<br><br>@RequestBody允许request的参数在request体内，而不是在直接链接在地址后面，此注解放置在参数前。即：<br><br>1、@RequestBody需要把所有请求参数作为json解析，因此，不能包含key=value这样的写法在请求url中，所有的请求参数都是一个json<br>2、直接通过浏览器输入url时，@RequestBody获取不到json对象，需要用java编程或者基于ajax的方法请求，将Content-Type设置为application/json</li>
-<li>@PathVariable<br><br>@PathVariable用来接收路径参数，如/new/001,可接收001作为参数，此注解放置在参数前。</li>
-<li>@RestController<br><br>@RestController是一个组合注解，组合了@Controller和@RespoonseBody，这意味着当你只开发一个和页面交互数据的控制的时候，需要使用此注解，若没有此注解，要想实现上述功能，则需要自己在代码中加@Controller和@ResponseBody两个注解。</li>
-</ul>
+        <p>mysql mysqldump 只导出表结构 不导出数据</p>
+<p>mysqldump –opt -d 数据库名 -u root -p &gt; xxx.sql </p>
+<p>备份数据库 </p>
+<p>#mysqldump　数据库名　&gt;数据库备份名 </p>
+<p>#mysqldump　-A　-u用户名　-p密码　数据库名&gt;数据库备份名 </p>
+<p>#mysqldump　-d　-A　–add-drop-table　-uroot　-p　&gt;xxx.sql </p>
+<p>1.导出结构不导出数据 </p>
+<p>mysqldump　–opt　-d　数据库名　-u　root　-p　&gt;　xxx.sql　　 </p>
+<p>2.导出数据不导出结构 </p>
+<p>mysqldump　-t　数据库名　-uroot　-p　&gt;　xxx.sql　 </p>
+<p>3.导出数据和表结构 </p>
+<p>mysqldump　数据库名　-uroot　-p　&gt;　xxx.sql　 </p>
+<p>4.导出特定表的结构 </p>
+<p>mysqldump　-uroot　-p　-B　数据库名　–table　表名　&gt;　xxx.sql　　 </p>
+<p>导入数据：<br>　　由于mysqldump导出的是完整的SQL语句，所以用mysql客户程序很容易就能把数据导入了：<br>复制代码代码如下:</p>
+<p>#mysql　数据库名　&lt;　文件名 </p>
+<p>#source　/tmp/xxx.sql　　 </p>
+<p>以上操作如果出现长时间卡顿，请重启mysql服务解决问题。</p>
 
       
     </div>
@@ -337,8 +341,8 @@ public class aaa{
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/23/使用hexo/" rel="next" title="使用hexo">
-                <i class="fa fa-chevron-left"></i> 使用hexo
+              <a href="/2018/06/05/Spring-Socket-Spring-Security聊天室/" rel="next" title="Spring Socket+Spring Security聊天室">
+                <i class="fa fa-chevron-left"></i> Spring Socket+Spring Security聊天室
               </a>
             
           </div>
@@ -346,10 +350,6 @@ public class aaa{
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/05/Spring-Socket-Spring-Security聊天室/" rel="prev" title="Spring Socket+Spring Security聊天室">
-                Spring Socket+Spring Security聊天室 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -401,17 +401,8 @@ public class aaa{
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -453,22 +444,6 @@ public class aaa{
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-MVC的常用注解"><span class="nav-number">1.</span> <span class="nav-text">Spring MVC的常用注解</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

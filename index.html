@@ -232,6 +232,143 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/22/mysql基本操作指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="senwen Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gikky">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/22/mysql基本操作指令/" itemprop="url">mysql基本操作指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T08:40:52+08:00">
+                2018-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>mysql mysqldump 只导出表结构 不导出数据</p>
+<p>mysqldump –opt -d 数据库名 -u root -p &gt; xxx.sql </p>
+<p>备份数据库 </p>
+<p>#mysqldump　数据库名　&gt;数据库备份名 </p>
+<p>#mysqldump　-A　-u用户名　-p密码　数据库名&gt;数据库备份名 </p>
+<p>#mysqldump　-d　-A　–add-drop-table　-uroot　-p　&gt;xxx.sql </p>
+<p>1.导出结构不导出数据 </p>
+<p>mysqldump　–opt　-d　数据库名　-u　root　-p　&gt;　xxx.sql　　 </p>
+<p>2.导出数据不导出结构 </p>
+<p>mysqldump　-t　数据库名　-uroot　-p　&gt;　xxx.sql　 </p>
+<p>3.导出数据和表结构 </p>
+<p>mysqldump　数据库名　-uroot　-p　&gt;　xxx.sql　 </p>
+<p>4.导出特定表的结构 </p>
+<p>mysqldump　-uroot　-p　-B　数据库名　–table　表名　&gt;　xxx.sql　　 </p>
+<p>导入数据：<br>　　由于mysqldump导出的是完整的SQL语句，所以用mysql客户程序很容易就能把数据导入了：<br>复制代码代码如下:</p>
+<p>#mysql　数据库名　&lt;　文件名 </p>
+<p>#source　/tmp/xxx.sql　　 </p>
+<p>以上操作如果出现长时间卡顿，请重启mysql服务解决问题。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/Spring-Socket-Spring-Security聊天室/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -806,7 +943,7 @@ hexo deploy
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
